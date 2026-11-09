@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="{{LANG}}"><head><meta charset="UTF-8"><style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 11pt; color: #2c2c2c; background: white; padding: 34px 50px 30px 50px; line-height: 1.4; }
+  .header { text-align: center; margin-bottom: 16px; }
+  .photo-wrap { width: 92px; height: 92px; border-radius: 50%; overflow: hidden; margin: 0 auto 9px auto; }
+  .photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  h1 { font-size: 21pt; font-weight: normal; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .contact-row { display: flex; justify-content: center; gap: 15px; font-size: 9.3pt; color: #444; flex-wrap: wrap; }
+  .section { margin-bottom: 14px; }
+  .section-title { background: #f0f0f0; text-align: center; font-size: 9.3pt; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 0; margin-bottom: 10px; }
+  .about { font-size: 10pt; color: #333; line-height: 1.5; }
+  .edu-line { font-size: 10pt; color: #333; }
+  .entry { display: grid; grid-template-columns: 145px 1fr; gap: 0 14px; margin-bottom: 11px; }
+  .entry-meta { font-size: 9pt; color: #444; line-height: 1.5; }
+  .entry-content .company { font-weight: bold; font-size: 10.5pt; }
+  .entry-content .role { font-style: italic; font-size: 10.5pt; }
+  .entry-content ul { margin: 3px 0 0 16px; }
+  .entry-content li { font-size: 10pt; color: #333; line-height: 1.4; margin-bottom: 2px; }
+  .skills-table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+  .skills-table td { border: 1px solid #ddd; padding: 5px 10px; width: 33.33%; color: #333; }
+  .lang-row { display: flex; gap: 0; }
+  .lang-col { flex: 1; text-align: center; font-size: 10pt; color: #333; }
+  .lang-col .l-name { font-weight: bold; }
+</style></head><body>
+
+<div class="header">
+  <div class="photo-wrap"><img src="{{PHOTO_DATA_URI}}"></div>
+  <h1>{{NAME}}</h1>
+  <div class="contact-row">
+    <span>&#9993; {{EMAIL}}</span>
+    <span>&#9990; {{PHONE}}</span>
+    <span>&#9679; {{LOCATION}}</span>
+    <span>&#9873; {{NATIONALITY}}</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">{{T_SUMMARY}}</div>
+  <p class="about">{{SUMMARY}}</p>
+</div>
+
+<div class="section">
+  <div class="section-title">{{T_EDUCATION}}</div>
+  {{EDUCATION}}
+  <!-- one per line: <p class="edu-line">Degree, Institution</p> -->
+</div>
+
+<div class="section">
+  <div class="section-title">{{T_EXPERIENCE}}</div>
+  {{EXPERIENCE}}
+  <!-- repeat this block per job, OLDEST FIRST:
+  <div class="entry">
+    <div class="entry-meta">MM/YYYY &#8211; MM/YYYY<br>City, Country</div>
+    <div class="entry-content">
+      <div class="company">Company</div>
+      <div class="role">Role</div>
+      <ul><li>Achievement, tailored to the ad.</li><li>Second bullet.</li></ul>
+    </div>
+  </div>
+  -->
+</div>
+
+<div class="section">
+  <div class="section-title">{{T_SKILLS}}</div>
+  <table class="skills-table">
+    {{SKILLS_ROWS}}
+    <!-- rows of three: <tr><td>Skill</td><td>Skill</td><td>Skill</td></tr> -->
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">{{T_LANGUAGES}}</div>
+  <div class="lang-row">
+    {{LANGUAGES}}
+    <!-- one per language: <div class="lang-col"><span class="l-name">Language</span><br>Level</div> -->
+  </div>
+</div>
+
+</body></html>

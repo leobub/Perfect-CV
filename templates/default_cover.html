@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="{{LANG}}"><head><meta charset="UTF-8"><style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 11pt; color: #2c2c2c; background: white; padding: 46px 56px 40px 56px; line-height: 1.55; }
+  .name-head { text-align: center; margin-bottom: 6px; }
+  h1 { font-size: 22pt; font-weight: normal; letter-spacing: 0.5px; }
+  .contact-row { display: flex; justify-content: center; gap: 15px; font-size: 9.3pt; color: #444; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px solid #ddd; margin-bottom: 26px; }
+  .meta-block { font-size: 10pt; color: #333; margin-bottom: 22px; }
+  .date-line { text-align: right; font-size: 10pt; color: #333; margin-bottom: 22px; }
+  .subject { font-weight: bold; font-size: 11pt; margin-bottom: 20px; }
+  p.body-p { margin-bottom: 14px; font-size: 10.7pt; color: #2c2c2c; }
+  .closing { margin-top: 24px; font-size: 10.7pt; }
+  .signature { margin-top: 6px; font-size: 11pt; }
+</style></head><body>
+<div class="name-head"><h1>{{NAME}}</h1></div>
+<div class="contact-row"><span>&#9993; {{EMAIL}}</span><span>&#9990; {{PHONE}}</span><span>&#9679; {{LOCATION}}</span></div>
+<div class="meta-block">{{COMPANY}}<br>{{ADDRESSEE}}<br>{{COMPANY_LOCATION}}</div>
+<div class="date-line">{{CITY}}, {{DATE}}</div>
+<div class="subject">{{SUBJECT}}</div>
+<p class="body-p">{{GREETING}}</p>
+{{BODY_PARAGRAPHS}}
+<!-- repeat per paragraph: <p class="body-p">...</p>  (aim for 3-4 short paragraphs) -->
+<div class="closing">{{CLOSING}}</div>
+<div class="signature">{{NAME}}</div>
+</body></html>
