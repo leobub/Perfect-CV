@@ -34,7 +34,13 @@ one-page PDF, with a matching cover letter on request. Everything runs locally v
 Put this folder in your Claude skills directory (or your project). Claude loads
 `SKILL.md` on its own. Then just say:
 
-> "Here's my CV — tailor it to this job ad."
+## How to use
+
+1. **Add the Perfect CV skill** to Claude.
+2. **Upload your current CV** so Claude learns your layout.
+3. **Paste the full job ad** — and that's it. You get a tailored, one-page CV back.
+
+Want a cover letter too? Just ask.
 
 ## Standalone
 
